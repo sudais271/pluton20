@@ -23,7 +23,8 @@ Route::post('/ajaxRequest', 'blogController@ajaxRequestPost');
 Route::post('/getCategory', 'blogController@getCategory');
 Route::get('/blog/{slug}', 'blogController@blogcategories');
 Route::post('/comment', 'blogController@comment');
-Route::post('/upvote', 'blogController@upvote');
+Route::post('/upvote', 'blogController@upvote')->name('upvote');
+Route::post('/downvote', 'blogController@downvote')->name('downvote');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

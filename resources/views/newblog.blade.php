@@ -77,7 +77,7 @@ body{
                                               <div class="input-group">
                                                 <select class="form-control" id="selectCategory" name="select">
                                                 <option value='0' class="form-control">-- Select Category --</option>
-                                                </select> 
+                                                </select>
                                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                                                     Add Categories
                                                     </button>
@@ -89,7 +89,7 @@ body{
                                         </div> -->
                                         <div>
                                         </div>
-                                        
+
                                     </div>
                                     <div class="col-12">
                                         <button class="btn btn-bordered w-100 mt-3" type="submit">Publish Now</button>
@@ -180,9 +180,9 @@ CKEDITOR.replace('editor', {
                                 var id = response['data'][i].id;
                                 var name = response['data'][i].category_name;
 
-                                var option = "<option value='"+id+"'>"+name+"</option>"; 
+                                var option = "<option value='"+id+"'>"+name+"</option>";
 
-                                $("#selectCategory").append(option); 
+                                $("#selectCategory").append(option);
                             }
                         }
                     }
@@ -192,7 +192,7 @@ CKEDITOR.replace('editor', {
     </script>
     <script type="text/javascript">
 
-   
+
 
     $.ajaxSetup({
 
@@ -204,12 +204,12 @@ CKEDITOR.replace('editor', {
 
     });
 
-   
+
 
     $(".addcategory").click(function(e){
         e.preventDefault();
         $("#exampleModal .close").click();
-   
+
 
         var category = $("input[name=category]").val();
 
@@ -229,7 +229,7 @@ CKEDITOR.replace('editor', {
 
         });
 
-  
+
 
 	});
 

@@ -193,10 +193,20 @@
                             <div class="row">
                             <div class="col-md-4">
                                 <div>
+                                    <?php
+                                        $url = Request::url();
+                                        $arryId = explode("/",$url);
+                                        $blogurl = $arryId[5];
+                                        $id = \App\Blog::where(['slug' => $blogurl])->pluck('id')[0];
+                                    ?>
+                                    <span>
+                                        {{count(\App\Vote::where(['blog_id' => $id])->where('upvote',1)->pluck('upvote'))}}
+                                    </span>
                                    <button class="btn btn-primary upvote">Upvote</button>
                                 </div>
                                 <div>
-                                    <button class="btn btn-primary">Downvote</button>
+                                    {{count(\App\Vote::where(['blog_id' => $id])->where('downvote',1)->pluck('downvote'))}}
+                                    <button class="btn btn-primary downvote">Downvote</button>
                                 </div>
                             </div>
                             <div class="blog-thumb col-md-8">
@@ -496,33 +506,74 @@
 
     <script type="text/javascript">
 
-   
 
-$.ajaxSetup({
 
-    headers: {
-
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-
-    }
-
-});
+// $.ajaxSetup({
+//
+//     headers: {
+//
+//         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+//
+//     }
+//
+// });
 
 
 
 $(".upvote").click(function(e){
     e.preventDefault();
-
+    let initial_url = window.location.pathname;
+    let url = initial_url .split( '/' );
+    let blog_url = url[3];
     $.ajax({
 
-       type:'POST',
+        type:'POST',
 
-       url:'upvote',
+        url : '{{ URL::route('upvote') }}',
+
+        data: {
+            "_token": "{{ csrf_token() }}",
+            "url" : blog_url,
+        },
        success:function(data){
 
-          alert(data.success);
+           if(data.success){
+               window.alert(data.success);
+           }else{
+               window.alert(data.error);
+           }
 
        }
+
+    });
+
+
+
+});
+$(".downvote").click(function(e){
+    e.preventDefault();
+    let initial_url = window.location.pathname;
+    let url = initial_url .split( '/' );
+    let blog_url = url[3];
+    $.ajax({
+
+        type:'POST',
+
+        url : '{{ URL::route('downvote') }}',
+
+        data: {
+            "_token": "{{ csrf_token() }}",
+            "url" : blog_url,
+        },
+        success:function(data){
+
+            if(data.success){
+                window.alert(data.success);
+            }else{
+                window.alert(data.error);
+            }
+
+        }
 
     });
 
@@ -533,4 +584,4 @@ $(".upvote").click(function(e){
 </script>
 </body>
 
-</html> 
+</html>

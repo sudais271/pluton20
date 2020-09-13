@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\DB;
 use Auth;
-use App\Upvote;
+use App\Vote;
 
 class blogController extends Controller
 {
@@ -69,12 +69,38 @@ class blogController extends Controller
         $data->save();
         return back();
     }
-    public function upvote(){
-        $url = $request->path();
-        $slug = substr($url, 5);
+    public function upvote(Request $request){
+        $slug = $request['url'];
         $id = auth()->user()->id;
         $blog_id = Blog::where('slug', $slug)->get('id');
-        dd($blog_id);
-        $isUpvoted = Upvote::where('user_id',$id)->where('blog_id',$blog_id);
+        $currentBlogId = $blog_id[0]['id'];
+        $isUpvoted = Vote::where('user_id',$id)->where('blog_id',$currentBlogId)->get();
+        if(count($isUpvoted) < 1){
+            $data = new Vote;
+            $data->upvote = 1;
+            $data->blog_id = $currentBlogId;
+            $data->user_id = $id;
+            $data->save();
+            return response()->json(['success'=>'Upvoted Successfully.']);
+        }else{
+            return response()->json(['error'=>'Cant upvote more than once']);
+        };
+    }
+    public function downvote(Request $request){
+        $slug = $request['url'];
+        $id = auth()->user()->id;
+        $blog_id = Blog::where('slug', $slug)->get('id');
+        $currentBlogId = $blog_id[0]['id'];
+        $isUpvoted = Vote::where('user_id',$id)->where('blog_id',$currentBlogId)->where('downvote', '!=', Null)->get();
+        if(count($isUpvoted) < 1){
+            $data = new Vote;
+            $data->downvote = 1;
+            $data->blog_id = $currentBlogId;
+            $data->user_id = $id;
+            $data->save();
+            return response()->json(['success'=>'Downvote Successfully.']);
+        }else{
+            return response()->json(['error'=>'Cant downvote more than once']);
+        };
     }
 }
