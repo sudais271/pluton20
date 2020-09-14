@@ -202,8 +202,7 @@
                                                 <li><a href="#">{{ $blogdemo->created_at}}</a></li>
                                             </ul>
                                             <!-- Blog Title -->
-                                            <h3 class="blog-title my-3"><a href="#">{{ $blogdemo->title}}</a></h3>
-                                            <a href="{{url('blog/'.$blogdemo->slug)}}" class="blog-btn mt-3">Read Blog</a>
+                                            <h3 class="blog-title my-3"><a href="{{url('blog/'.$blogdemo->slug)}}">{{ $blogdemo->title}}</a></h3>
                                         </div>
                                     </div>
                                 </div>
@@ -347,7 +346,7 @@
         @guest
         <div class="pt-5 pr-5">
             <a class="btn btn-primary float-right" href='login'>Login To Write a Blog</a>
-        </div>        
+        </div>
         @endguest
         @auth
         <div class="pt-5 pr-5">

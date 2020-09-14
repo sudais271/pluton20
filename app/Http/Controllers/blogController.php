@@ -13,6 +13,10 @@ use App\Vote;
 
 class blogController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['auth','verified']);
+    }
     public function index(){
         $this->data['blogs'] = Blog::all();
         $this->data['categories'] = Category::all();
@@ -102,5 +106,13 @@ class blogController extends Controller
         }else{
             return response()->json(['error'=>'Cant downvote more than once']);
         };
+    }
+    public function displsyCategory(Request $request){
+        $url = $request->path();
+        $category_name = substr($url, 9);
+        $category = Category::where('category_name', $category_name)->get('id');
+        $category_id = $category[0]['id'];
+        $data['blogCategory'] = Blog::where('category_id',$category_id)->get();
+        dd($data['blogCategory']);
     }
 }

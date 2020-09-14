@@ -25,6 +25,7 @@ Route::get('/blog/{slug}', 'blogController@blogcategories');
 Route::post('/comment', 'blogController@comment');
 Route::post('/upvote', 'blogController@upvote')->name('upvote');
 Route::post('/downvote', 'blogController@downvote')->name('downvote');
-Auth::routes();
+Route::get('/category/{category}', 'blogController@displsyCategory' );
+Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
