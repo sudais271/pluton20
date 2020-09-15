@@ -101,7 +101,7 @@ h6 {
 }
 
 h1 {
-    font-size: 4em;
+    font-size: 3.6em;
     font-weight: 600;
     line-height: 1.2;
 }
@@ -326,6 +326,32 @@ img {
     z-index: 1;
 }
 
+.btn-custom{
+    font-size: 15px;
+    font-weight: 500;
+    color: #1E65C4;
+    line-height: 1;
+    text-align: center;
+    padding: 18px 30px;
+    border: 0 none;
+    border-radius: 6px;
+    outline: 0 none;
+    position: relative;
+    z-index: 1;
+    background-color: #EFEFEF;
+}
+.btn-custom:hover{
+    
+}
+.btn-custom:hover,
+.btn-custom:focus,
+.btn-custom:active {
+    color: #1E65C4;
+    -webkit-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
 .btn:hover,
 .btn:focus,
 .btn:active {
@@ -401,7 +427,7 @@ img {
 }
 
 .store-buttons img {
-    max-width: 190px;
+    max-width: 350px;
 }
 
 .store-buttons.store-black img {
@@ -530,8 +556,8 @@ img {
     margin-top: -45px;
 }
 
-.social-icons > a.facebook {
-    background-color: #3b5999 !important;
+.social-icons > a.telegram {
+    background-color: #222A30 !important;
 }
 
 .social-icons > a.twitter {
@@ -539,7 +565,7 @@ img {
 }
 
 .social-icons > a.google-plus {
-    background-color: #dd4b39 !important;
+    background-color: #7289DA !important;
 }
 
 .social-icons > a.vine {
@@ -1903,8 +1929,8 @@ img {
     font-size: 16px;
 }
 
-.blog-share .social-icons > a.facebook:hover {
-    background-color: #3b5999 !important;
+.blog-share .social-icons > a.telegram:hover {
+    background-color: #222A30 !important;
     color: #fff;
 }
 
@@ -1914,7 +1940,7 @@ img {
 }
 
 .blog-share .social-icons > a.google-plus:hover {
-    background-color: #dd4b39 !important;
+    background-color: #7289DA !important;
     color: #fff;
 }
 

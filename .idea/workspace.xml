@@ -21,10 +21,10 @@
   <component name="ChangeListManager">
     <list default="true" id="9aeeb05a-c0aa-47c7-8b80-66615c535341" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/blogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/blogController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/blog.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/blog.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/bg/accounts.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/bg/accounts.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,6 +185,8 @@
       <workItem from="1600047165429" duration="2940000" />
       <workItem from="1600105269219" duration="1256000" />
       <workItem from="1600106950571" duration="1545000" />
+      <workItem from="1600112527964" duration="917000" />
+      <workItem from="1600144854733" duration="637000" />
     </task>
     <servers />
   </component>
@@ -208,9 +210,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1599998397082" />
-    <state x="480" y="0" width="576" height="824" key="find.popup" timestamp="1600106123718">
+    <state x="480" y="0" width="576" height="824" key="find.popup" timestamp="1600112851581">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="480" y="0" width="576" height="824" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1600106123718" />
+    <state x="480" y="0" width="576" height="824" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1600112851581" />
   </component>
 </project>
