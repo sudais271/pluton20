@@ -344,12 +344,9 @@
                                         <div id="accordion1" class="accordion-content widget-content collapse show" data-parent="#cat-accordion">
                                             <!-- Category Widget Items -->
                                             <ul class="widget-items">
-                                                <li><a href="#" class="d-flex p-3"><span>Web Design</span><span class="ml-auto">(14)</span></a></li>
-                                                <li><a href="#" class="d-flex p-3"><span>App Landing</span><span class="ml-auto">(32)</span></a></li>
-                                                <li><a href="#" class="d-flex active p-3"><span>Wordpress</span><span class="ml-auto">(27)</span></a></li>
-                                                <li><a href="#" class="d-flex p-3"><span>UI Design</span><span class="ml-auto">(18)</span></a></li>
-                                                <li><a href="#" class="d-flex p-3"><span>Bootstrap</span><span class="ml-auto">(15)</span></a></li>
-                                                <li><a href="#" class="d-flex p-3"><span>Web Template</span><span class="ml-auto">(29)</span></a></li>
+                                                @foreach($categories as $category)
+                                                    <li><a href="{{url('category/'.$category->category_name)}}" class="d-flex p-3"><span>{{$category->category_name}}</span></a></li>
+                                                @endforeach
                                             </ul>
                                         </div>
                                     </div>

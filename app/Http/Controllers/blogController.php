@@ -58,6 +58,7 @@ class blogController extends Controller
         $url = $request->path();
         $slug = substr($url, 5);
         $this->data['blog'] = Blog::where('slug', $slug)->with('comments')->get();
+        $this->data['categories'] = Category::all();
         return view('singleblog',$this->data);
     }
     public function comment(Request $request){
@@ -112,7 +113,8 @@ class blogController extends Controller
         $category_name = substr($url, 9);
         $category = Category::where('category_name', $category_name)->get('id');
         $category_id = $category[0]['id'];
-        $data['blogCategory'] = Blog::where('category_id',$category_id)->get();
-        dd($data['blogCategory']);
+        $this->data['blogCategory'] = Blog::where('category_id',$category_id)->get();
+        $this->data['categories'] = Category::all();
+        return view('blogCategory',$this->data);
     }
 }
