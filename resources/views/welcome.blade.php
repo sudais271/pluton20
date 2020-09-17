@@ -52,8 +52,8 @@
     <header class="navbar navbar-sticky navbar-expand-lg navbar-dark">
         <div class="container position-relative">
             <a class="navbar-brand" href="index.html">
-                <img class="navbar-brand-regular" src="assets/img/logo/logo-white.png" width="40%" alt="brand-logo">
-                <img class="navbar-brand-sticky" src="assets/img/logo/logo.png" width="40%" alt="sticky brand-logo">
+                <img class="navbar-brand-regular" src="assets/img/logo/logo-white.png" width="70%" alt="brand-logo">
+                <img class="navbar-brand-sticky" src="assets/img/logo/logo.png" width="70%" alt="sticky brand-logo">
             </a>
             <button class="navbar-toggler d-lg-none" type="button" data-toggle="navbarToggler" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -86,12 +86,31 @@
                         <li class="nav-item">
                             <a class="nav-link scroll" href="#contact">Contact</a>
                         </li>
+                        <li class="nav-item">
+                            <button type="button" data-toggle="modal" data-target="#exampleModal" class="btn-custom" style="margin:10px 10px;; width:140px;">Buy PBN</button>
+                        </li>
                     </ul>
                 </nav>
             </div>
         </div>
     </header>
     <!-- ***** Header End ***** -->
+    <!--------------------------PRE SALE MODAL------------------>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body text-center" style="font-family: 'Poppins', sans-serif;">
+                    <img src="assets/img/favicon.png" style="margin:40px;">
+                    <h3 style="color:grey">Pre-Sale will go live in:</h3>
+                    <h1 id="demo" style="color:#2885DE">01d 03h 05m 18s</h1>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Done</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!----------------MODAL ENDS----------------->
     <!-- ***** Welcome Area Start ***** -->
     <section id="main" class="section welcome-area bg-overlay d-flex align-items-center overflow-hidden">
         <div class="container">
@@ -715,5 +734,36 @@
 <script src="assets/js/plugins/plugins.min.js"></script>
 <!-- Active js -->
 <script src="assets/js/active.js"></script>
+<!-- Timer -->
+<script>
+    // Set the date we're counting down to
+    var countDownDate = new Date("Sep 16, 2020 15:30:00 UTC").getTime();
+
+    // Update the count down every 1 second
+    var x = setInterval(function() {
+
+        // Get today's date and time
+        var now = new Date().getTime();
+
+        // Find the distance between now and the count down date
+        var distance = countDownDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Output the result in an element with id="demo"
+        document.getElementById("demo").innerHTML =  hours + "h "
+            + minutes + "m " + seconds + "s ";
+
+        // If the count down is over, write some text
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("demo").innerHTML = "EXPIRED";
+        }
+    }, 1000);
+</script>
 </body>
 </html>

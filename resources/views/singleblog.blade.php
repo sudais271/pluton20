@@ -25,141 +25,80 @@
 </head>
 
 <body class="blog blog-right">
-    <!--====== Preloader Area Start ======-->
-    <div class="preloader-main">
-        <div class="preloader-wapper">
-            <svg class="preloader" xmlns="http://www.w3.org/2000/svg" version="1.1" width="600" height="200">
-                <defs>
-                    <filter id="goo" x="-40%" y="-40%" height="200%" width="400%">
-                        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-                        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -8" result="goo" />
-                    </filter>
-                </defs>
-                <g filter="url(#goo)">
-                    <circle class="dot" cx="50" cy="50" r="25" fill="#8731E8" />
-                    <circle class="dot" cx="50" cy="50" r="25" fill="#8731E8" />
-                </g>
-            </svg>
-            <div>
-                <div class="loader-section section-left"></div>
-                <div class="loader-section section-right"></div>
-            </div>
+<!--====== Preloader Area Start ======-->
+<div class="preloader-main">
+    <div class="preloader-wapper">
+        <svg class="preloader" xmlns="http://www.w3.org/2000/svg" version="1.1" width="600" height="200">
+            <defs>
+                <filter id="goo" x="-40%" y="-40%" height="200%" width="400%">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                    <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -8" result="goo" />
+                </filter>
+            </defs>
+            <g filter="url(#goo)">
+                <circle class="dot" cx="50" cy="50" r="25" fill="#1255C0" />
+                <circle class="dot" cx="50" cy="50" r="25" fill="#1E88E5" />
+            </g>
+        </svg>
+        <div>
+            <div class="loader-section section-left"></div>
+            <div class="loader-section section-right"></div>
         </div>
     </div>
-
-    <!--====== Scroll To Top Area Start ======-->
-    <div id="scrollUp" title="Scroll To Top">
-        <i class="fas fa-arrow-up"></i>
-    </div>
-    <!--====== Scroll To Top Area End ======-->
-
-    <div class="main">
-        <!-- ***** Header Start ***** -->
-        <header class="navbar navbar-sticky navbar-expand-lg navbar-dark">
-            <div class="container position-relative">
-                <a class="navbar-brand" href="index.html">
-                    <img class="navbar-brand-regular" src="{{asset('assets/img/logo/logo-white.png')}}" alt="brand-logo">
-                    <img class="navbar-brand-sticky" src="{{asset('assets/img/logo/logo.png')}}" alt="sticky brand-logo">
-                </a>
+</div>
+<!--====== Scroll To Top Area Start ======-->
+<div id="scrollUp" title="Scroll To Top">
+    <i class="fas fa-arrow-up"></i>
+</div>
+<!--====== Scroll To Top Area End ======-->
+<div class="main">
+    <!-- ***** Header Start ***** -->
+    <header class="navbar navbar-sticky navbar-expand-lg navbar-dark">
+        <div class="container position-relative">
+            <a class="navbar-brand" href="index.html">
+                <img class="navbar-brand-regular" src="https://plutonnetwork.io/assets/img/logo/logo-white.png" width="70%" alt="brand-logo">
+                <img class="navbar-brand-sticky" src="https://plutonnetwork.io/assets/img/logo/logo.png" width="70%" alt="sticky brand-logo">
+            </a>
+            <button class="navbar-toggler d-lg-none" type="button" data-toggle="navbarToggler" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-inner">
+                <!--  Mobile Menu Toggler -->
                 <button class="navbar-toggler d-lg-none" type="button" data-toggle="navbarToggler" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
-                <div class="navbar-inner">
-                    <!--  Mobile Menu Toggler -->
-                    <button class="navbar-toggler d-lg-none" type="button" data-toggle="navbarToggler" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <nav>
-                        <ul class="navbar-nav" id="navbar-nav">
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="javascript:;" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Home
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <li>
-                                        <a class="dropdown-item" href="index.html">Homepage-1</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="index-2.html">Homepage-2</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="index-3.html">Homepage-3</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="index-4.html">Homepage-4</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="index-5.html">Homepage-5</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="index-6.html">Homepage-6</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link scroll" href="#features">Features</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="javascript:;" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Pages
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="javascript:;">Blog Pages</a>
-                                        <ul class="dropdown-menu">
-                                            <li>
-                                                <a class="dropdown-item" href="blog-two-column.html">Blog- 2 Column</a>
-                                            </li>
-                                            <li>
-                                                <a class="dropdown-item" href="blog-three-column.html">Blog- 3 Column</a>
-                                            </li>
-                                            <li>
-                                                <a class="dropdown-item" href="blog-left-sidebar.html">Blog- Left Sidebar</a>
-                                            </li>
-                                            <li>
-                                                <a class="dropdown-item" href="blog-right-sidebar.html">Blog- Right Sidebar</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="javascript:;">Blog Details</a>
-                                        <ul class="dropdown-menu">
-                                            <li>
-                                                <a class="dropdown-item" href="blog-details-left-sidebar.html">Blog Details- Left Sidebar</a>
-                                            </li>
-                                            <li>
-                                                <a class="dropdown-item" href="blog-details-right-sidebar.html">Blog Details- Right Sidebar</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="reviews.html">Reviews</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="faq.html">FAQ</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="contact.html">Contact</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item disabled" href="#">More Coming Soon</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link scroll" href="#screenshots">Screenshots</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link scroll" href="#pricing">Pricing</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link scroll" href="#contact">Contact</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
+                <nav>
+                    <ul class="navbar-nav" id="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link scroll" href="#main">Main</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link scroll" href="#features">Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" target="_blank" href="pluton_whitepaper.pdf">Whitepaper</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link scroll" href="#faqs">FAQs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link scroll" href="#tokenomics">Tokenomics</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link scroll" href="#roadmap">Roadmap</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link scroll" href="#contact">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" data-toggle="modal" data-target="#exampleModal" class="btn-custom" style="margin:10px 10px;; width:140px;">Write Blog</button>
+                        </li>
+                    </ul>
+                </nav>
             </div>
-        </header>
-        <!-- ***** Header End ***** -->
+        </div>
+    </header>
+    <!-- ***** Header End ***** -->
 
         <!-- ***** Breadcrumb Area Start ***** -->
         <section class="section breadcrumb-area bg-overlay d-flex align-items-center">
@@ -171,8 +110,8 @@
                             <h3 class="text-white">Blog Details</h3>
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                <li class="breadcrumb-item"><a href="#">Blog Details</a></li>
-                                <li class="breadcrumb-item active">Right Sidebar</li>
+                                <li class="breadcrumb-item"><a href="#">Blog</a></li>
+                                <li class="breadcrumb-item active">Blog Details</li>
                             </ol>
                         </div>
                     </div>
@@ -191,24 +130,7 @@
                         @foreach($blog as $singleblog)
                             <!-- Blog Thumb -->
                             <div class="row">
-                            <div class="col-md-4">
-                                <div>
-                                    <?php
-                                        $url = Request::url();
-                                        $arryId = explode("/",$url);
-                                        $blogurl = $arryId[5];
-                                        $id = \App\Blog::where(['slug' => $blogurl])->pluck('id')[0];
-                                    ?>
-                                    <span>
-                                        {{count(\App\Vote::where(['blog_id' => $id])->where('upvote',1)->pluck('upvote'))}}
-                                    </span>
-                                   <button class="btn btn-primary upvote">Upvote</button>
-                                </div>
-                                <div>
-                                    {{count(\App\Vote::where(['blog_id' => $id])->where('downvote',1)->pluck('downvote'))}}
-                                    <button class="btn btn-primary downvote">Downvote</button>
-                                </div>
-                            </div>
+
                             <div class="blog-thumb col-md-8">
                                 <a href="#"><img src="{{url('/public/uploads/'.$singleblog->filename)}}" width="1920" height="1280" alt=""></a>
                             </div>
@@ -217,6 +139,7 @@
                             <div class="blog-content sApp-blog">
                                 <!-- Meta Info -->
                                 <div class="meta-info d-flex flex-wrap align-items-center py-2">
+
                                     <ul>
                                         <li class="d-inline-block p-2">By <a href="#">{{$singleblog->user_name}}</a></li>
                                         <li class="d-inline-block p-2"><a href="#">{{$singleblog->created_at}}</a></li>
@@ -251,6 +174,26 @@
                         @endforeach
                             <!-- Blog Comments -->
                             <div class="blog-comments">
+                                <div class="col-md-4">
+                                    <div>
+                                        <?php
+                                        $url = Request::url();
+                                        $arryId = explode("/",$url);
+                                        $blogurl = $arryId[5];
+                                        $id = \App\Blog::where(['slug' => $blogurl])->pluck('id')[0];
+                                        ?>
+                                            <button type="button" style="margin: 4px;" class="btn btn-primary upvote">
+                                                Upvote <span class="badge badge-light">{{count(\App\Vote::where(['blog_id' => $id])->where('upvote',1)->pluck('upvote'))}}</span>
+                                            </button>
+{{--                                        <button class="btn btn-primary upvote" style="margin:4px;">{{count(\App\Vote::where(['blog_id' => $id])->where('upvote',1)->pluck('upvote'))}} Upvote</button>--}}
+                                    </div>
+                                    <div>
+                                        <button type="button" style="margin: 4px;" class="btn btn-primary downvote">
+                                            Downvote <span class="badge badge-light">{{count(\App\Vote::where(['blog_id' => $id])->where('downvote',1)->pluck('downvote'))}}</span>
+                                        </button>
+{{--                                        <button class="btn btn-primary downvote" style="margin:4px;">{{count(\App\Vote::where(['blog_id' => $id])->where('downvote',1)->pluck('downvote'))}} Downvote</button>--}}
+                                    </div>
+                                </div>
                                 <!-- Comments -->
                                 <div class="comments my-3">
                                     <!-- Comments Title -->
@@ -466,7 +409,7 @@
                             <a class="navbar-brand" href="#">
                                 <img class="logo" src="{{asset('assets/img/logo/logo.png')}}" alt="">
                             </a>
-                            <p class="mt-2 mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis non, fugit totam vel laboriosam vitae.</p>
+                            <p class="mt-2 mb-3">Pluton Blogging Network is an open-source blockchain platform that allows users to read their favorite content online while allowing authors and aspiring writers to publish e-books, post their content and receive comments from their readers.</p>
                             <ul class="d-flex flex-column flex-sm-row justify-content-between">
                                 <li class="py-2"><a href="#">Affiliate program</a></li>
                                 <li class="py-2"><a href="#">Terms &amp; Conditions</a></li>
@@ -475,7 +418,7 @@
                             </ul>
                             <!-- Copyright Area -->
                             <div class="copyright-area border-0 pt-3">
-                                <p>Made with <i class="icofont-heart-alt"></i> By <a href="#">Theme Land</a></p>
+                                <p>© Copyrights 2020 Pluton All rights reserved.</p>
                             </div>
                         </div>
                     </div>

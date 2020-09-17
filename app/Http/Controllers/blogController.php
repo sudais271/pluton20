@@ -15,7 +15,7 @@ class blogController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['auth','verified']);
+//        $this->middleware(['auth','verified']);
     }
     public function index(){
         $this->data['blogs'] = Blog::all();
@@ -40,9 +40,14 @@ class blogController extends Controller
         $blog->user_name = Auth::user()->name;
         $blog->featured = $request->input('featured');
         $blog->category_id = $request->input('select');
-        $blog->save();
-        return redirect()->route('blog')
-        ->with('success','Book added successfully...');
+        $saved = $blog->save();
+        if($saved) {
+            return redirect()->route('blog')
+                ->with('success', 'Book added successfully...');
+        }else{
+            return redirect()->route('/')
+                ->with('error', 'Something wrong');
+        }
     }
     public function ajaxRequestPost(Request $request){
         $category = new Category();

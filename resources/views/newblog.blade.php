@@ -10,7 +10,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title  -->
-    <title>sApp - App Landing Page | Signup</title>
+    <title>Pluton | Write Blog</title>
 
     <!-- Favicon  -->
     <link rel="icon" href="assets/img/favicon.png">
@@ -28,11 +28,16 @@
     min-height: 200px !important;
 }
 body{
-    background-color:blue;
+    background-color:#2771CE;
+}
+.main{
+    background-color: #2771CE;
+    margin-top: 40px;
 }
 </style>
 
 <body class="accounts">
+    <!--====== Preloader Area Start ======-->
     <!--====== Preloader Area Start ======-->
     <div class="preloader-main">
         <div class="preloader-wapper">
@@ -44,8 +49,8 @@ body{
                     </filter>
                 </defs>
                 <g filter="url(#goo)">
-                    <circle class="dot" cx="50" cy="50" r="25" fill="#8731E8" />
-                    <circle class="dot" cx="50" cy="50" r="25" fill="#8731E8" />
+                    <circle class="dot" cx="50" cy="50" r="25" fill="#1255C0" />
+                    <circle class="dot" cx="50" cy="50" r="25" fill="#1E88E5" />
                 </g>
             </svg>
             <div>
@@ -54,6 +59,59 @@ body{
             </div>
         </div>
     </div>
+    <!--====== Scroll To Top Area Start ======-->
+    <div id="scrollUp" title="Scroll To Top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    <!--====== Scroll To Top Area End ======-->
+    <div class="main">
+        <!-- ***** Header Start ***** -->
+        <header class="navbar navbar-sticky navbar-expand-lg navbar-dark">
+            <div class="container position-relative">
+                <a class="navbar-brand" href="index.html">
+                    <img class="navbar-brand-regular" src="assets/img/logo/logo-white.png" width="70%" alt="brand-logo">
+                    <img class="navbar-brand-sticky" src="assets/img/logo/logo.png" width="70%" alt="sticky brand-logo">
+                </a>
+                <button class="navbar-toggler d-lg-none" type="button" data-toggle="navbarToggler" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-inner">
+                    <!--  Mobile Menu Toggler -->
+                    <button class="navbar-toggler d-lg-none" type="button" data-toggle="navbarToggler" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <nav>
+                        <ul class="navbar-nav" id="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link scroll" href="#main">Main</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link scroll" href="#features">Features</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" target="_blank" href="pluton_whitepaper.pdf">Whitepaper</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link scroll" href="#faqs">FAQs</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link scroll" href="#tokenomics">Tokenomics</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link scroll" href="#roadmap">Roadmap</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link scroll" href="#contact">Contact</a>
+                            </li>
+                            <li class="nav-item">
+                                <button type="button" data-toggle="modal" data-target="#exampleModal" class="btn-custom" style="margin:10px 10px;; width:140px;">Buy PBN</button>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <!-- ***** Header End ***** -->
             <div class="container pt-5">
             <form method="post" action="newBlog" enctype="multipart/form-data">
             @csrf
@@ -71,14 +129,14 @@ body{
                                               <textarea name="content" id="editor" cols="50" rows="10"></textarea>
                                         </div>
                                         <div class="form-group">
-                                        <input type="file" class="form-control" name="image" id="image">
+                                        <input type="file" class="form-control" name="image" id="image" required>
                                         </div>
                                         <div class="form-group">
                                               <div class="input-group">
                                                 <select class="form-control" id="selectCategory" name="select">
                                                 <option value='0' class="form-control">-- Select Category --</option>
                                                 </select>
-                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
                                                     Add Categories
                                                     </button>
                                               </div>
@@ -92,7 +150,7 @@ body{
 
                                     </div>
                                     <div class="col-12">
-                                        <button class="btn btn-bordered w-100 mt-3" type="submit">Publish Now</button>
+                                        <button class="btn btn-success w-100 mt-3" type="submit">Publish Now</button>
                                     </div>
                                 </div>
                             </form>
@@ -102,7 +160,7 @@ body{
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Add New Category</h5>
+                        <h5 class="modal-title " id="exampleModalLabel">Add New Category</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                         </button>

@@ -17,13 +17,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/blog', 'blogController@index')->name('blog');
-Route::get('/new-blog', 'blogController@new');
+Route::get('/new-blog', 'blogController@new')->middleware('verified');
 Route::post('/newBlog', 'blogController@publish');
 Route::post('/ajaxRequest', 'blogController@ajaxRequestPost');
 Route::post('/getCategory', 'blogController@getCategory');
 Route::get('/blog/{slug}', 'blogController@blogcategories');
 Route::post('/comment', 'blogController@comment');
-Route::post('/upvote', 'blogController@upvote')->name('upvote');
+Route::post('/upvote', 'blogController@upvote')->name('upvote')->middleware('verified');
 Route::post('/downvote', 'blogController@downvote')->name('downvote');
 Route::get('/category/{category}', 'blogController@displsyCategory' );
 Auth::routes(['verify' => true]);
