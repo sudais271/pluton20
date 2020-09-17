@@ -24,7 +24,8 @@ class CreateBlogsTable extends Migration
             $table->string('user_name');
             $table->boolean('featured')->nullable();
             $table->integer('category_id');
-            $table->integer('upvote_id')->nullable();
+            $table->integer('upvotes')->nullable();
+            $table->integer('downvotes')->nullable();
             $table->text('tags')->nullable();
             $table->timestamps();
         });

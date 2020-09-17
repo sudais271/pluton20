@@ -10,11 +10,11 @@ class Blog extends Model
     {
         return $this->hasMany('App\Comment');
     }
-    public function upvotes()
-    {
-        return $this->hasMany('App\Upvote');
-    }
+//    public function upvotes()
+//    {
+//        return $this->hasMany('App\Upvote');
+//    }
     protected $fillable = [
-        'title', 'description', 'filename', 'mime' ,'original_filename', 'user_id','featured', 'category_id', 'tags'
+        'title', 'description', 'filename', 'mime' ,'original_filename', 'user_id','featured', 'category_id', 'tags', 'upvotes', 'downvotes'
     ];
 }

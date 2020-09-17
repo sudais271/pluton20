@@ -180,16 +180,19 @@
                                         $url = Request::url();
                                         $arryId = explode("/",$url);
                                         $blogurl = $arryId[5];
-                                        $id = \App\Blog::where(['slug' => $blogurl])->pluck('id')[0];
+                                        $upvotes = \App\Blog::where(['slug' => $blogurl])->pluck('upvotes')[0];
+                                        $ups = $upvotes == Null ? 0 : $upvotes;
+                                        $downvotes = \App\Blog::where(['slug' => $blogurl])->pluck('downvotes')[0];
+                                        $down = $downvotes == Null ? 0 : $downvotes;
                                         ?>
                                             <button type="button" style="margin: 4px;" class="btn btn-primary upvote">
-                                                Upvote <span class="badge badge-light">{{count(\App\Vote::where(['blog_id' => $id])->where('upvote',1)->pluck('upvote'))}}</span>
+                                                Upvote <span class="badge badge-light">{{$ups}}</span>
                                             </button>
 {{--                                        <button class="btn btn-primary upvote" style="margin:4px;">{{count(\App\Vote::where(['blog_id' => $id])->where('upvote',1)->pluck('upvote'))}} Upvote</button>--}}
                                     </div>
                                     <div>
                                         <button type="button" style="margin: 4px;" class="btn btn-primary downvote">
-                                            Downvote <span class="badge badge-light">{{count(\App\Vote::where(['blog_id' => $id])->where('downvote',1)->pluck('downvote'))}}</span>
+                                            Downvote <span class="badge badge-light">{{$down}}</span>
                                         </button>
 {{--                                        <button class="btn btn-primary downvote" style="margin:4px;">{{count(\App\Vote::where(['blog_id' => $id])->where('downvote',1)->pluck('downvote'))}} Downvote</button>--}}
                                     </div>

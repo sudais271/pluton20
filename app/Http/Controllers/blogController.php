@@ -91,6 +91,13 @@ class blogController extends Controller
             $data->blog_id = $currentBlogId;
             $data->user_id = $id;
             $data->save();
+            $blog = Blog::where('id', $currentBlogId)->first();
+            if($blog->upvotes){
+                $blogUpvotes = $blog->upvotes + 1;
+                Blog::where('id', $currentBlogId)->update(array('upvotes' => $blogUpvotes));
+            }else{
+                Blog::where('id', $currentBlogId)->update(array('upvotes' => 1));
+            }
             return response()->json(['success'=>'Upvoted Successfully.']);
         }else{
             return response()->json(['error'=>'Cant upvote more than once']);
@@ -108,6 +115,16 @@ class blogController extends Controller
             $data->blog_id = $currentBlogId;
             $data->user_id = $id;
             $data->save();
+            $blog = Blog::where('id', $currentBlogId)->first();
+            if($blog->upvotes){
+                $blogUpvotes = $blog->upvotes - 1;
+                $blogDownvotes = $blog->downvotes + 1;
+                Blog::where('id', $currentBlogId)->update(array('upvotes' => $blogUpvotes));
+                Blog::where('id', $currentBlogId)->update(array('downvotes' => $blogDownvotes));
+            }else{
+                Blog::where('id', $currentBlogId)->update(array('upvotes' => -1));
+                Blog::where('id', $currentBlogId)->update(array('downvotes' => 1));
+            }
             return response()->json(['success'=>'Downvote Successfully.']);
         }else{
             return response()->json(['error'=>'Cant downvote more than once']);
