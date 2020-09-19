@@ -224,9 +224,9 @@
                                 </div>
                             </div>
                             <!-- Blog Contact -->
-                            <div class="blog-contact mt-4">
                             @if (Route::has('login'))
                             @auth
+                            <div class="blog-contact mt-4">
                                 <!-- Contact Title -->
                                 <h3 class="comments-title text-uppercase text-right mb-3">Post your Comments</h3>
                                 <!-- Comment Box -->
@@ -256,14 +256,16 @@
                                             </div>
                                         </div>
                                     </form>
-                                    @else
+                                </div>
+                            </div>
+                                @else
+                                    <div class="blog-contact mt-4">
                                     <form action="{{ route('login') }}">
                                         <input type="submit" class="btn" value="Please LogIn to Put a comment" />
                                     </form>
-                                        @endif
-                                    @endauth
-                                </div>
-                            </div>
+                                    </div>
+                                @endif
+                            @endauth
                         </article>
                     </div>
                     <div class="col-12 col-lg-3">
