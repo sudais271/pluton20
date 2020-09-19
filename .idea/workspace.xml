@@ -21,13 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9aeeb05a-c0aa-47c7-8b80-66615c535341" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/blogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/blogController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/verify.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/verify.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/blog.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/blog.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/blogCategory.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/blogCategory.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/newblog.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/newblog.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/singleblog.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/singleblog.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,7 +192,7 @@
       <workItem from="1600314682569" duration="1615000" />
       <workItem from="1600316604893" duration="7422000" />
       <workItem from="1600497464584" duration="1054000" />
-      <workItem from="1600537211091" duration="8829000" />
+      <workItem from="1600537211091" duration="10464000" />
     </task>
     <servers />
   </component>
