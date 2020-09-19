@@ -20,6 +20,7 @@ class blogController extends Controller
     public function index(){
         $this->data['blogs'] = Blog::all();
         $this->data['categories'] = Category::all();
+        $this->data['popular'] = Blog::orderBy('upvotes', 'DESC')->take(5)->get();
         return view('blog',$this->data);
     }
     public function new(){
@@ -64,6 +65,7 @@ class blogController extends Controller
         $slug = substr($url, 5);
         $this->data['blog'] = Blog::where('slug', $slug)->with('comments')->get();
         $this->data['categories'] = Category::all();
+        $this->data['popular'] = Blog::orderBy('upvotes', 'DESC')->take(5)->get();
         return view('singleblog',$this->data);
     }
     public function comment(Request $request){
@@ -137,6 +139,7 @@ class blogController extends Controller
         $category_id = $category[0]['id'];
         $this->data['blogCategory'] = Blog::where('category_id',$category_id)->get();
         $this->data['categories'] = Category::all();
+        $this->data['popular'] = Blog::orderBy('upvotes', 'DESC')->take(5)->get();
         return view('blogCategory',$this->data);
     }
 }

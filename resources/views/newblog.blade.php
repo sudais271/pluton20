@@ -103,9 +103,14 @@ body{
                             <li class="nav-item">
                                 <a class="nav-link scroll" href="#contact">Contact</a>
                             </li>
-                            <li class="nav-item">
-                                <button type="button" data-toggle="modal" data-target="#exampleModal" class="btn-custom" style="margin:10px 10px;; width:140px;">Buy PBN</button>
-                            </li>
+                            @auth
+                                <li class="nav-item">
+                                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><button  class="btn-custom" style="margin:10px 10px;; width:140px;">Logout</button></a>
+                                </li>
+                            @endauth
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
                         </ul>
                     </nav>
                 </div>

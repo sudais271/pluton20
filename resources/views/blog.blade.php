@@ -56,8 +56,8 @@
     <header class="navbar navbar-sticky navbar-expand-lg navbar-dark">
         <div class="container position-relative">
             <a class="navbar-brand" href="index.html">
-                <img class="navbar-brand-regular" src="assets/img/logo/logo-white.png" width="70%" alt="brand-logo">
-                <img class="navbar-brand-sticky" src="assets/img/logo/logo.png" width="70%" alt="sticky brand-logo">
+                <img class="navbar-brand-regular" src="assets/img/logo/logo-white.png" width="40%" alt="brand-logo">
+                <img class="navbar-brand-sticky" src="assets/img/logo/logo.png" width="40%" alt="sticky brand-logo">
             </a>
             <button class="navbar-toggler d-lg-none" type="button" data-toggle="navbarToggler" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -90,9 +90,16 @@
                         <li class="nav-item">
                             <a class="nav-link scroll" href="#contact">Contact</a>
                         </li>
+                        @guest
                         <li class="nav-item">
-                            <button type="button" data-toggle="modal" data-target="#exampleModal" class="btn-custom" style="margin:10px 10px;; width:140px;">Write Blog</button>
+                            <a href="login"><button class="btn-custom" style="margin:10px 10px; width:140px;">Login</button></a>
                         </li>
+                        @endguest
+                        @auth
+                            <li class="nav-item">
+                                <a href="new-blog"><button class="btn-custom" style="margin:10px 10px; width:140px;">Write Blog</button></a>
+                            </li>
+                        @endauth
                     </ul>
                 </nav>
             </div>
@@ -180,98 +187,34 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Single Widget
+                            <!-- Single Widget -->
                             <div class="single-widget">
-                                <!-- Post Widget
+                                <!-- Post Widget -->
                                 <div class="accordions widget post-widget" id="post-accordion">
                                     <div class="single-accordion">
                                         <h5>
                                             <a role="button" class="collapse show text-uppercase d-block p-3" data-toggle="collapse" href="#accordion2">Popular Post
                                             </a>
                                         </h5>
-                                        <!-- Post Widget Content
+                                        <!-- Post Widget Content -->
                                         <div id="accordion2" class="accordion-content widget-content collapse show" data-parent="#post-accordion">
-                                            <!-- Post Widget Items
+                                            <!-- Post Widget Items -->
                                             <ul class="widget-items">
+                                                @foreach($popular as $populars)
                                                 <li>
-                                                    <a href="#" class="single-post media p-3">
-                                                        <!-- Post Thumb
+                                                    <a href="{{url('blog/'.$populars->slug)}}" class="single-post media p-3">
+                                                        <!-- Post Thumb -->
                                                         <div class="post-thumb avatar-md">
-                                                            <img class="align-self-center" src="assets/img/avatar/avatar-1.png" alt="">
+                                                            <img class="align-self-center" src="{{url('/public/uploads/'.$populars->filename)}}" height="64" width="64" alt="">
                                                         </div>
                                                         <div class="post-content media-body pl-3">
-                                                            <p class="post-date mb-2">05 Feb, 2018</p>
-                                                            <h6>Promote Your Apps With sApp</h6>
+                                                            <p class="post-date mb-2">{{$populars->created_at}}</p>
+                                                            <h6>{{$populars->title}}</h6>
                                                         </div>
                                                     </a>
                                                 </li>
-                                                <li>
-                                                    <a href="#" class="single-post media p-3">
-                                                        <!-- Post Thumb
-                                                        <div class="post-thumb avatar-md">
-                                                            <img class="align-self-center" src="assets/img/avatar/avatar-2.png" alt="">
-                                                        </div>
-                                                        <div class="post-content media-body pl-3">
-                                                            <p class="post-date mb-2">09 Apr, 2018</p>
-                                                            <h6>Sell Your Product Like Never Before</h6>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="single-post media p-3">
-                                                        <!-- Post Thumb
-                                                        <div class="post-thumb avatar-md">
-                                                            <img class="align-self-center" src="assets/img/avatar/avatar-3.png" alt="">
-                                                        </div>
-                                                        <div class="post-content media-body pl-3">
-                                                            <p class="post-date mb-2">13 Jul, 2018</p>
-                                                            <h6>Built For Passionate People</h6>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="single-post media p-3">
-                                                        <!-- Post Thumb
-                                                        <div class="post-thumb avatar-md">
-                                                            <img class="align-self-center" src="assets/img/avatar/avatar-4.png" alt="">
-                                                        </div>
-                                                        <div class="post-content media-body pl-3">
-                                                            <p class="post-date mb-2">03 Oct, 2018</p>
-                                                            <h6>Get Unlimited Offers &amp; Plans</h6>
-                                                        </div>
-                                                    </a>
-                                                </li>
+                                                @endforeach
                                             </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                             Single Widget -->
-                            <div class="single-widget">
-                                <!-- Tags Widget -->
-                                <div class="accordions widget tags-widget" id="tags-accordion">
-                                    <div class="single-accordion blog-accordion">
-                                        <h5>
-                                            <a role="button" class="collapse show text-uppercase d-block p-3" data-toggle="collapse" href="#accordion3">Popular Tags
-                                            </a>
-                                        </h5>
-                                        <!-- Tags Widget Content -->
-                                        <div id="accordion3" class="accordion-content widget-content collapse show" data-parent="#tags-accordion">
-                                            <!-- Tags Widget Items -->
-                                            <div class="widget-content tags-widget-items pt-2">
-                                                <a href="#" class="d-inline-block mt-2 mr-1 px-2 py-1">Technology</a>
-                                                <a href="#" class="d-inline-block mt-2 mr-1 px-2 py-1">Space</a>
-                                                <a href="#" class="d-inline-block mt-2 mr-1 px-2 py-1">Article</a>
-                                                <a href="#" class="d-inline-block mt-2 mr-1 px-2 py-1">Bitcoin</a>
-                                                <a href="#" class="d-inline-block mt-2 mr-1 px-2 py-1">Cryptocurrency</a>
-                                                <a href="#" class="d-inline-block mt-2 mr-1 px-2 py-1">Business</a>
-                                                <a href="#" class="d-inline-block mt-2 mr-1 px-2 py-1">Fashion</a>
-                                                <a href="#" class="d-inline-block mt-2 mr-1 px-2 py-1">Media</a>
-                                                <a href="#" class="d-inline-block mt-2 mr-1 px-2 py-1">Lifestyle</a>
-                                                <a href="#" class="d-inline-block mt-2 mr-1 px-2 py-1">Pluton</a>
-                                                <a href="#" class="d-inline-block mt-2 mr-1 px-2 py-1">Blogging</a>
-                                                <a href="#" class="d-inline-block mt-2 mr-1 px-2 py-1">Blog</a>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
