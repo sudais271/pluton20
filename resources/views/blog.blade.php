@@ -55,9 +55,9 @@
     <!-- ***** Header Start ***** -->
     <header class="navbar navbar-sticky navbar-expand-lg navbar-dark">
         <div class="container position-relative">
-            <a class="navbar-brand" href="index.html">
-                <img class="navbar-brand-regular" src="assets/img/logo/logo-white.png" width="40%" alt="brand-logo">
-                <img class="navbar-brand-sticky" src="assets/img/logo/logo.png" width="40%" alt="sticky brand-logo">
+            <a class="navbar-brand" href="{{url('/#main')}}">
+                <img class="navbar-brand-regular" src="assets/img/logo/logo-white.png" width="70%" alt="brand-logo">
+                <img class="navbar-brand-sticky" src="assets/img/logo/logo.png" width="70%" alt="sticky brand-logo">
             </a>
             <button class="navbar-toggler d-lg-none" type="button" data-toggle="navbarToggler" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -70,25 +70,25 @@
                 <nav>
                     <ul class="navbar-nav" id="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link scroll" href="#main">Main</a>
+                            <a class="nav-link " href="/#main">Main</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link scroll" href="#features">Features</a>
+                            <a class="nav-link " href="{{url('/#features')}}">Features</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" target="_blank" href="pluton_whitepaper.pdf">Whitepaper</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link scroll" href="#faqs">FAQs</a>
+                            <a class="nav-link " href="{{url('/#faqs')}}">FAQs</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link scroll" href="#tokenomics">Tokenomics</a>
+                            <a class="nav-link " href="{{url('/#tokenomics')}}">Tokenomics</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link scroll" href="#roadmap">Roadmap</a>
+                            <a class="nav-link " href="{{url('/#roadmap')}}">Roadmap</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link scroll" href="#contact">Contact</a>
+                            <a class="nav-link" href="{{url('/#contact')}}">Contact</a>
                         </li>
                         @guest
                         <li class="nav-item">
@@ -225,16 +225,7 @@
             </div>
         </section>
         <!-- ***** Blog Area End ***** -->
-        @guest
-        <div class="pt-5 pr-5">
-            <a class="btn btn-primary float-right" href='login'>Login To Write a Blog</a>
-        </div>
-        @endguest
-        @auth
-        <div class="pt-5 pr-5">
-            <a class="btn btn-primary float-right" href='new-blog'>Write Blog</a>
-        </div>
-        @endauth
+
         <!--====== Footer Area Start ======-->
         <footer class="section inner-footer bg-gray ptb_100">
             <div class="container">

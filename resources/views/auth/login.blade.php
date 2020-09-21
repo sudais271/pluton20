@@ -26,6 +26,7 @@
 
 <body class="homepage-5 accounts">
 
+
 <!--====== Scroll To Top Area Start ======-->
 <div id="scrollUp" title="Scroll To Top">
     <i class="fas fa-arrow-up"></i>
@@ -35,7 +36,7 @@
     <!-- ***** Header Start ***** -->
     <header class="navbar navbar-sticky navbar-expand-lg navbar-dark">
         <div class="container position-relative">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="{{url('/#main')}}">
                 <img class="navbar-brand-regular" src="assets/img/logo/logo-white.png" width="70%" alt="brand-logo">
                 <img class="navbar-brand-sticky" src="assets/img/logo/logo.png" width="70%" alt="sticky brand-logo">
             </a>
@@ -50,29 +51,36 @@
                 <nav>
                     <ul class="navbar-nav" id="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link scroll" href="#main">Main</a>
+                            <a class="nav-link " href="/#main">Main</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link scroll" href="#features">Features</a>
+                            <a class="nav-link " href="{{url('/#features')}}">Features</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" target="_blank" href="pluton_whitepaper.pdf">Whitepaper</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link scroll" href="#faqs">FAQs</a>
+                            <a class="nav-link " href="{{url('/#faqs')}}">FAQs</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link scroll" href="#tokenomics">Tokenomics</a>
+                            <a class="nav-link " href="{{url('/#tokenomics')}}">Tokenomics</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link scroll" href="#roadmap">Roadmap</a>
+                            <a class="nav-link " href="{{url('/#roadmap')}}">Roadmap</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link scroll" href="#contact">Contact</a>
+                            <a class="nav-link" href="{{url('/#contact')}}">Contact</a>
                         </li>
-                        <li class="nav-item">
-                            <button type="button" data-toggle="modal" data-target="#exampleModal" class="btn-custom" style="margin:10px 10px;; width:140px;">Sign Up</button>
-                        </li>
+                        @guest
+                            <li class="nav-item">
+                                <a href="register"><button class="btn-custom" style="margin:10px 10px; width:140px;">Sign Up</button></a>
+                            </li>
+                        @endguest
+                        @auth
+                            <li class="nav-item">
+                                <a href="new-blog"><button class="btn-custom" style="margin:10px 10px; width:140px;">Write Blog</button></a>
+                            </li>
+                        @endauth
                     </ul>
                 </nav>
             </div>
@@ -135,7 +143,7 @@
                                     <div class="col-12">
                                         <button class="btn btn-bordered w-100 mt-3 mt-sm-4" type="submit">Sign In</button>
                                         <div class="contact-bottom">
-                                            <span class="d-inline-block mt-3">By signing up, you accept our <a href="#">Terms</a> &amp; <a href="#">Privacy Policy</a></span>
+                                            <span class="d-inline-block mt-3"><a href="{{ url('password/reset') }}">Forgot Password</a></span>
                                         </div>
                                     </div>
                                     <div class="col-12">

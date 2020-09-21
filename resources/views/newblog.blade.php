@@ -181,7 +181,6 @@ body{
                     <div class="modal-footer">
                         <button class="btn btn-secondary" data-dismiss="modal">Close</button>
                         <button class="btn btn-primary addcategory">Add Category</button>
-                        <span class="text-red">Please reload the page after adding new category</span>
                     </div>
                     </div>
                 </div>
@@ -287,6 +286,7 @@ CKEDITOR.replace('editor', {
            success:function(data){
 
               alert(data.success);
+               location.reload();
 
            }
 

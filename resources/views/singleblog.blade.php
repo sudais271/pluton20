@@ -452,12 +452,12 @@ $(".upvote").click(function(e){
             "url" : blog_url,
         },
        success:function(data){
-
            if(data.success){
                window.alert(data.success);
            }else{
                window.alert(data.error);
            }
+           location.reload();
 
        }
 
@@ -486,8 +486,13 @@ $(".downvote").click(function(e){
             if(data.success){
                 window.alert(data.success);
             }else{
-                window.alert(data.error);
+                if(data.message){
+                    window.alert(data.message);
+                }else{
+                    window.alert(data.error);
+                }
             }
+            location.reload();
 
         }
 

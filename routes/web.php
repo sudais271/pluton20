@@ -24,7 +24,7 @@ Route::post('/getCategory', 'blogController@getCategory');
 Route::get('/blog/{slug}', 'blogController@blogcategories');
 Route::post('/comment', 'blogController@comment');
 Route::post('/upvote', 'blogController@upvote')->name('upvote')->middleware('verified');
-Route::post('/downvote', 'blogController@downvote')->name('downvote');
+Route::post('/downvote', 'blogController@downvote')->name('downvote')->middleware('verified');
 Route::get('/category/{category}', 'blogController@displsyCategory' );
 Auth::routes(['verify' => true]);
 
